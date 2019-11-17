@@ -1,5 +1,6 @@
 <?php
-$conn = new mysqli("database", "root", ".sweetpwd.", "my_db");
+echo "Inside web application with MySQL k8s<br>";
+$conn = new mysqli("mysql8-service", "root", ".sweetpwd.", "my_db");
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
