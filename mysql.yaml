@@ -16,7 +16,6 @@ spec:
       containers:
       - image: tanvir0102/php-mysql:8.0
         name: mysql
-        imagePullPolicy: Never
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: .sweetpwd.
@@ -30,10 +29,3 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql8
-        volumeMounts:
-          - name: mysql-persistent-storage
-            mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-persistent-storage
-        persistentVolumeClaim:
-          claimName: mysql-pv-claim

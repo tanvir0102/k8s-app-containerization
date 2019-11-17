@@ -16,14 +16,6 @@ spec:
     spec:
       containers:
       - name: php-apache
-        image: tanvir0102/php-webapp:latest
-        imagePullPolicy: Never
+        image: tanvir0102/php-webapp:v1
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: hostvol
-          mountPath: /var/www/html/
-      volumes:
-        - name: hostvol
-          hostPath:
-            path: /data
